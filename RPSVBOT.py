@@ -29,7 +29,7 @@ async def on_member_join(member):
 async def on_message(message):
     if message.content.startswith("/상담"):
         server = message.server
-
+        author = message.author.id
         name = message.author.name
         everyone = discord.PermissionOverwrite(read_messages=False, send_messages=False, create_instant_invite=False,
                                                        manage_channel=False, manage_permissions=False, manage_webhooks=False,
@@ -44,7 +44,7 @@ async def on_message(message):
                                          *member_perms, type=discord.ChannelType.text)
         
         
-        await bot.send_message(discord.utils.get(message.server.channels, name=name), "@everyone 상담 시작")
+        await bot.send_message(discord.utils.get(message.server.channels, name=name), "@everyone\"+ "<@"+id+">님의 상담을 시작합니다."\n <@")
         
         
     if message.content.startswith("공지띄우기1"):
