@@ -7,9 +7,6 @@ from bs4 import BeautifulSoup as bs
 client = discord.Client()
 bot = commands.Bot(command_prefix='T')
 
-def remove_html_tags(data):
-    p = re.compile(r'<.*?>')
-    return p.sub('\n', data)
 
 @bot.event
 async def on_ready():
