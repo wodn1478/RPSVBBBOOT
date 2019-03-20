@@ -22,7 +22,7 @@ async def on_ready():
 async def on_member_join(member):
     role = ""
     for k in member.server.roles:
-        if k.name == "RPSV":
+        if k.name == "USER":
             role = k
             break
     await bot.add_roles(member, role)
