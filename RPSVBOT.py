@@ -42,7 +42,11 @@ async def on_message(message):
         await bot.create_channel(server, name, (discord.utils.get(message.server.roles, name="@everyone"), everyone),
                                             (discord.utils.get(message.server.members, name=name), Member),
                                          *member_perms, type=discord.ChannelType.text)
-
+        
+        
+        await bot.send_message(discord.utils.get(message.server.channels, name=name), "@everyone 상담 시작")
+        
+        
     if message.content.startswith("공지띄우기1"):
         await bot.delete_message(message)
         embed = discord.Embed(title="RPSV 관리자",
