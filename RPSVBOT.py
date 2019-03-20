@@ -44,7 +44,7 @@ async def on_message(message):
                                          *member_perms, type=discord.ChannelType.text)
         
         
-        await bot.send_message(discord.utils.get(message.server.channels, name=name), "@everyone\"+ "<@"+id+">님의 상담을 시작합니다."\n <@")
+        await bot.send_message(discord.utils.get(message.server.channels, name=name), "@everyone\n"+ "<@"+id+">님의 상담을 시작합니다.")
         
         
     if message.content.startswith("공지띄우기1"):
