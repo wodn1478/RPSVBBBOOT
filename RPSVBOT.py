@@ -28,21 +28,21 @@ async def on_member_join(member):
 @bot.event
 async def on_message(message):
     if message.content.startswith("/상담"):
+        id = message.author.id
         server = message.server
-        author = message.author.id
         name = message.author.name
         name2 = name.lower()
         everyone = discord.PermissionOverwrite(read_messages=False, send_messages=False, create_instant_invite=False,
-                                                       manage_channel=False, manage_permissions=False, manage_webhooks=False,
-                                                       send_TTS_messages=False, manage_messages=False, embed_links=False,
-                                                       attach_files=False, read_message_history=False, mention_everyone=False,
-                                                       use_external_emojis=False, add_reactions=False)
+                                                           manage_channel=False, manage_permissions=False, manage_webhooks=False,
+                                                           send_TTS_messages=False, manage_messages=False, embed_links=False,
+                                                           attach_files=False, read_message_history=False, mention_everyone=False,
+                                                           use_external_emojis=False, add_reactions=False)
         Member = discord.PermissionOverwrite(read_messages=True, send_messages=True, create_instant_invite=False,read_message_history=True,
-                                                     manage_channel=False, manage_permissions=False, manage_webhooks=False)
+                                                         manage_channel=False, manage_permissions=False, manage_webhooks=False)
         member_perms = [(mentioned, Member) for mentioned in message.mentions]
         await bot.create_channel(server, name2, (discord.utils.get(message.server.roles, name="@everyone"), everyone),
-                                            (discord.utils.get(message.server.members, name=name), Member),
-                                         *member_perms, type=discord.ChannelType.text)
+                                                (discord.utils.get(message.server.members, name=name), Member),
+                                             *member_perms, type=discord.ChannelType.text)
         
         
         await bot.send_message(discord.utils.get(message.server.channels, name=name2), "@everyone\n"+ "<@"+id+">님의 상담을 시작합니다.")
