@@ -37,3 +37,5 @@ async def on_message(message):
                               color=0x00ff00)
         await bot.send_message(message.channel, embed=embed)
 
+access_token = os.environ["BOT_TOKEN"]
+bot.run(access_token)
