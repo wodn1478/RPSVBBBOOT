@@ -24,7 +24,7 @@ async def on_member_join(member):
             break
     await bot.add_roles(member, role)
     embed = discord.Embed(title="RPSV 관리자", description="알피서버 사전예약 이벤트중! 지금 당장 신청하자\n\n1.5.2 최강자를 가려라 약한사람은 필요없다 -RP-\n\n1주차 최강자전 보상 : 서버아이템 ( 미정 )\n2주차 최강자전 보상 : 서버아이템 ( 미정 )+ 문화상품권 2만원\n3주차 최강자전 보상 : 서버아이템 ( 미정 )\n4주차 최강자전 보상 : 문화상품권 5만원+서버아이템 ( 미정 )", color=0x00ff00)
-    await bot.send_message(bot.get_channel("557527899993800716"), embed=embed)
+    await bot.send_message(bot.get_channel("557527899993800714"), embed=embed)
 @bot.event
 async def on_message(message):
     if message.content.startswith("공지띄우기1"):
