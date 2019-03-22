@@ -58,6 +58,7 @@ async def on_message(message):
         embed = discord.Embed(color=0x00ff00)
         embed.add_field(name="서버 이름", value="RP서버", inline=True)
         embed.add_field(name="서버 관리자", value="미즈, 다솔, 독사", inline=True)
+        embed.add_field(name="서버 주소", value="RPSV.kr", inline=True)
         embed.add_field(name="오픈일", value="2019-03-24", inline=True)
         embed.add_field(name="카페 주소", value="https://cafe.naver.com/rpsv", inline=True)
         embed.set_thumbnail(url=message.author.avatar_url)
