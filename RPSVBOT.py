@@ -54,6 +54,14 @@ async def on_message(message):
                               description="알피서버 사전예약 이벤트중! 지금 당장 신청하자\n\n1.5.2 최강자를 가려라 약한사람은 필요없다 -RP-\n\n1주차 최강자전 보상 : 서버아이템 ( 미정 )\n2주차 최강자전 보상 : 서버아이템 ( 미정 )+ 문화상품권 2만원\n3주차 최강자전 보상 : 서버아이템 ( 미정 )\n4주차 최강자전 보상 : 문화상품권 5만원+서버아이템 ( 미정 )",
                               color=0x00ff00)
         await bot.send_message(message.channel, embed=embed)
-
+    if message.content.startswith("/서버정보"):
+        embed = discord.Embed(color=0x00ff00)
+        embed.add_field(name="서버 이름", value="RP서버", inline=True)
+        embed.add_field(name="서버 관리자", value="미즈, 다솔, 독사", inline=True)
+        embed.add_field(name="오픈일", value="2019-03-24", inline=True)
+        embed.add_field(name="카페 주소", value="https://cafe.naver.com/rpsv", inline=True)
+        embed.set_thumbnail(url=message.author.avatar_url)
+        await bot.send_message(message.channel, embed=embed)
+        
 access_token = os.environ["BOT_TOKEN"]
 bot.run(access_token)
